@@ -1,8 +1,4 @@
-import path from 'path';
-import fs from 'fs';
 import { injectable, inject } from 'tsyringe';
-
-import uploadConfig from '@config/upload';
 
 import AppError from '@shared/errors/AppError';
 import User from '@modules/users/infra/typeorm/entities/User';
@@ -36,7 +32,7 @@ class UpdateUserAvatarService {
 
     const filename = await this.storageProvider.saveFile(avatarFileName);
 
-    user.avatar = avatarFileName;
+    user.avatar = filename;
 
     await this.usersRepository.save(user);
 
