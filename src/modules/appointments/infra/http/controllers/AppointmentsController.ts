@@ -6,9 +6,6 @@ import CreateAppointmentService from '@modules/appointments/services/CreateAppoi
 
 export default class AppointmentController {
   public async index(request: Request, response: Response): Promise<Response> {
-    // const appointments = await appointmentsRepository.find();
-
-    // response.json(appointments);
     return response.json([]);
   }
 
